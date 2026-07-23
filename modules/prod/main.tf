@@ -3,13 +3,11 @@ module "rg" {
   child_rg = var.parent_rg
 
 }
-
 module "nsg" {
   source    = "../child/2nsg"
   child_nsg = var.parent_nsg
 
 }
-
 module "vnet" {
   depends_on = [module.rg]
   source     = "../child/3vnet"
