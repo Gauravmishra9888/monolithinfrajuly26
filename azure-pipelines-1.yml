@@ -1,0 +1,14 @@
+trigger: none
+
+pool: GMPool
+
+stages:
+- stage:
+  displayName: terraform install & init
+  jobs:
+    - job:
+      displayName: terraform install
+      steps: 
+      - task: TerraformInstaller@1
+        inputs:
+          terraformVersion: 'latest'
