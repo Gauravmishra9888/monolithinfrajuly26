@@ -4,10 +4,10 @@ pool: GMPool
 
 stages: 
  - stage: 
-   displayName: terraform install & init
+   displayName: "terraform install & init"
    jobs:
      - job: 
-       displayName: terraform install
+       displayName: "terraform install"
        steps:
        - task: TerraformInstaller@1
          inputs:
