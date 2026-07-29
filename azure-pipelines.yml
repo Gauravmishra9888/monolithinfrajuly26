@@ -1,14 +1,18 @@
-trigger: none
+trigger:
+ branches:
+   include:
+    - main
 
 pool: GMPool
 
-stages: 
- - stage: 
-   displayName: "terraform install & init"
+stages:
+ - stage: build
+   displayName: build stage
    jobs:
-     - job: 
-       displayName: "terraform install"
-       steps:
-       - task: TerraformInstaller@1
-         inputs:
-           terraformVersion: 'latest'
+    - job: terraformplan
+      displayName: terraform plan
+      steps:
+      - task: TerraformInstaller@1
+        displayName: terffaorm install
+        inputs:
+          terraformVersion: 'latest'
